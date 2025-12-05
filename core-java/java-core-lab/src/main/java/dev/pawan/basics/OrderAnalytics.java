@@ -1,10 +1,9 @@
 package dev.pawan.basics;
 
-import java.util.*;
-//import java.util.HashMap;
-//import java.util.LinkedList;
-//import java.util.Map;
-//import java.util.Queue;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Queue;
 
 public class OrderAnalytics {
     private void validateDailyOrders(int[] dailyOrders){
@@ -213,7 +212,7 @@ public class OrderAnalytics {
       }
 
 //   🚀 NOW LEVEL UP: Medium-Level Sliding Window (Classic LeetCode)
-//🧠 Sliding Window Problem #4 (Medium)
+//   🧠 Sliding Window Problem #4 (Medium)
 //   Longest Subarray After Deleting One Element (Max Consecutive Ones III Variant)
      public int longestStreakWithOneDeletion(int[] arr){
         validateDailyOrders(arr);
@@ -274,6 +273,34 @@ public class OrderAnalytics {
          return q.isEmpty() ? -1 : q.peek();
 
      }
+
+     //Next Key Pattern: Subarray Sum Using Prefix Sum + HashMap
+     //This one is super important.
+     //prefixSum[j] - prefixSum[i] = k  (prefixSum[j] -> running total )
+     //prefixSum[i]= prefixSum[j] -  k  (prefixSum[i] is  sum at i index in prefixSum[j])
+     //Problem: Count Subarrays With Sum Exactly = K
+    public int countSubarraysWithSumK(int[] nums, int k){
+        validateDailyOrders(nums);
+        Map<Integer, Integer> prefixSumMap = new HashMap<>();
+        prefixSumMap.put(0,1); // map(0,1) as prefixSumSoFar - K = 0 means prefixSumSoFar = K
+        int prefixSumSoFar = 0; // running total
+        int count = 0;
+        for (int num : nums) {
+            prefixSumSoFar += num;
+            int needed = prefixSumSoFar - k;
+
+            //checking if prefixSum is in map or not, if true then increment count
+            if (prefixSumMap.containsKey(needed)) {
+                count += prefixSumMap.get(needed);
+            }
+
+            //updating Map with prefixSumSoFar
+            prefixSumMap.put(prefixSumSoFar, prefixSumMap.getOrDefault(prefixSumSoFar, 0) + 1);
+        }
+        return count;
+    }
+
+
 
 
 }
