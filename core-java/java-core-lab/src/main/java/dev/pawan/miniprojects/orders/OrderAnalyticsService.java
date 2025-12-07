@@ -195,9 +195,8 @@ public class OrderAnalyticsService {
             while(freqMap.size() > k) {
                 if(freqMap.get(key) == 0) {
                     freqMap.remove(arr[windowStart]);
-                } else {
-                    freqMap.put(key,newCount);
                 }
+                freqMap.put(key,newCount);
                 windowStart++;
             }
 

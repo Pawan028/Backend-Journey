@@ -45,8 +45,8 @@ public class Main {
         System.out.println("longest Subarray With Sum At Most S: "+analytics.longestSubarrayWithSumAtMostS(arr1,6));
         System.out.println();
 
-        int[] arr2 = {4, 4, 5, 5, 1, 2, 1};
-        System.out.println("longest Subarray With At Most K Distinct: "+analytics.longestSubarrayWithAtMostKDistinct(arr2,3));
+        int[] arr2 = {10,20,10,10,5,5,10,10,40};
+        System.out.println("longest Subarray With At Most K Distinct: "+analytics.longestSubarrayWithAtMostKDistinct(arr2,2));
         System.out.println();
 
         int[] arr3 = {1,1,1,1};
