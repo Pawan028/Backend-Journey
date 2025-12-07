@@ -68,7 +68,7 @@ These are not random problems — they form the foundation of backend data proce
 
 1.  **Clone the repo**
     ```bash
-    git clone [https://github.com/](https://github.com/)<your-username>/Java-Backend-Journey.git
+    git clone [https://github.com/](https://github.com/)<Pawan028>/Backend-Journey.git
     ```
 
 2.  **Navigate to module**
